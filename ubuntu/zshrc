@@ -1,0 +1,46 @@
+DISABLE_AUTO_UPDATE="true"
+
+source ~/.virtualenv/py3/bin/activate
+
+alias gs='gst'
+# alias vi='/usr/local/bin/vim'
+alias vi='vim'
+
+alias getpass='openssl rand -base64 20'
+alias www='python -m http.server 8000'
+alias getip='curl ipinfo.io/ip'
+
+# pip install pygments
+function ccat() {
+    local style="monokai"
+    if [ $# -eq 0 ]; then
+        pygmentize -P style=$style -P tabsize=4 -f terminal256 -g
+    else
+        for NAME in $@; do
+            pygmentize -P style=$style -P tabsize=4 -f terminal256 -g "$NAME"
+        done
+    fi
+}
+
+# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+plugins=(
+  zsh-autosuggestions 
+  git
+)
+
+
+alias dp='docker ps -a'
+alias ds='docker stop'
+alias dc='docker-compose'
+alias di='docker images'
+alias dr='docker rm'
+alias dir='docker image rm'
+
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
+# 设置goroot
+export PATH=$PATH:/usr/local/Cellar/go/1.11.1/bin/
+# 设置gopath
+export GOPATH=/Users/jinlong/projects/go
+export GOBIN=$GOPATH/bin
+

@@ -1,0 +1,12 @@
+乘法表 
+print ('\n'.join([' '.join(['%s*%s=%-2s' % (y,x,x*y) for y in range(1,x+1)]) for x in range(1,10)]))
+
+json
+json.dumps(item, ensure_ascii=False, indent=4)
+
+对字典排序
+sorted(_dict.items(), key=lambda d: d[1], reverse=False)
+
+http server
+py2 python -m SimpleHTTPServer 8000
+py3 python -m http.server 8000

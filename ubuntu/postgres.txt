@@ -1,0 +1,37 @@
+﻿sudo apt-get install postgresql-client
+sudo apt-get install postgresql
+# sudo apt-get install pgadmin3
+# pgcli
+
+sudo adduser dbuser
+sudo su - postgres
+psql
+\password postgres
+CREATE USER dbuser WITH PASSWORD 'password';
+CREATE DATABASE exampledb OWNER dbuser;
+GRANT ALL PRIVILEGES ON DATABASE exampledb to dbuser;
+
+psql -U dbuser -d exampledb -h 127.0.0.1 -p 5432
+psql exampledb
+# psql exampledb < exampledb.sql  #恢复外部数据
+
+sudo vi /etc/postgresql/9.5/main/postgresql.conf
+sudo gedit /etc/postgresql/9.5/main/pg_hba.conf		host all all 0.0.0.0/0 md5
+sudo /etc/init.d/postgresql restart
+
+		
+查询有外键的数据
+select count(*) from "case" where court_id in (select id from court where province ='');
+
+python -m pwiz -e postgresql -u user -P db > model.py
+python -m pwiz -e mysql -H 192.168.1.x -u root -P dbname > model.py
+
+/etc/mysql/my.cnf:
+
+[client]
+default-character-set = utf8
+
+[mysqld]
+default-storage-engine = INNODB
+character-set-server = utf8
+collation-server = utf8_general_ci
