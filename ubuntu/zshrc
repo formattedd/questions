@@ -28,13 +28,11 @@ plugins=(
   git
 )
 
-
 alias dp='docker ps -a'
-alias ds='docker stop'
+alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias dc='docker-compose'
 alias di='docker images'
-alias dr='docker rm'
-alias dir='docker image rm'
+alias dir='docker rmi'
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
