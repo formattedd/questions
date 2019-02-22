@@ -55,3 +55,15 @@ security = user
 > * /boot	200M左右	ext4	
 > * /tmp	5G左右	ext4	
 
+
+### swap
+
+```sh
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+sudo vim /etc/fstab
+/swapfile none swap sw 0 0
+```
