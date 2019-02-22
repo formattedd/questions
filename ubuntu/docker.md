@@ -1,4 +1,9 @@
-/etc/docker/daemon.json
+#### install
+```sh
+wget -qO- https://get.docker.com/ | sh
+```
+
+#### /etc/docker/daemon.json
 
 ```sh
 {
