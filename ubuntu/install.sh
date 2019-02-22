@@ -18,4 +18,6 @@ wget -qO- https://raw.githubusercontent.com/formatedd/vimrc/master/setup.sh | sh
 
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
 wget https://raw.githubusercontent.com/formateddd/questions/master/ubuntu/Schminitz.zsh-theme -P ~/.oh-my-zsh/custom/themes
