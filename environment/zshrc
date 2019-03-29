@@ -36,9 +36,14 @@ alias dir='docker rmi'
 
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
-# 设置goroot
-export PATH=$PATH:/usr/local/Cellar/go/1.11.1/bin/
-# 设置gopath
-export GOPATH=/Users/jinlong/projects/go
+# in mac
+export GOROOT=/usr/local/Cellar/go/1.11.1/libexec
+export GOPATH=~/go
 export GOBIN=$GOPATH/bin
+export PATH=$PATH:/usr/local/Cellar/go/1.11.1/bin/:$GOPATH/bin
 
+# another linux
+export GOROOT=/opt/go
+export GOPATH=~/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:/opt/go/bin/:$GOPATH/bin
