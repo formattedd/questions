@@ -1,28 +1,37 @@
 
 - ## 安装 zsh
 
-```sh 
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    ```sh
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
-themes, 可更改
-wget https://raw.githubusercontent.com/formateddd/questions/master/ubuntu/Schminitz.zsh-theme -P ~/.oh-my-zsh/custom/themes/
+    themes, 可更改
+    wget https://raw.githubusercontent.com/formateddd/questions/master/environment/Schminitz.zsh-theme -P ~/.oh-my-zsh/custom/themes/
 
-plgins, 
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-```
-- ##### [其他zshrc配置](https://github.com/formateddd/questions/blob/master/ubuntu/zshrc)
+    plgins,
+    git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    ```
+- ##### [其他zshrc配置](https://github.com/formateddd/questions/blob/master/environment/zshrc)
 
 ------------
+- ## ssh/config
 
+    ```sh
+    Host virtual
+    HostName xxx
+    User xxx
+    IdentitiesOnly yes
+    IdentityFile ~/.ssh/id_rsa
+    ServerAliveInterval 120
+    # ssh-copy-id -i ~/.ssh/id_rsa.pub virtual
+    ```
+
+------------
 - ## git
 
 ##### config
 * git config --global user.name ""
 * git config --global user.email ""
 * ssh-keygen -t rsa -C ""
-
-##### 更改指令：
-* git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
 
 ##### proxy
 * ~/.gitconfig
@@ -33,13 +42,13 @@ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh
 
 ------------
 
-- ## virtualenv
+- ## pip config
 
-```sh
-sudo pip install virtualenv
-virtualenv -p /usr/bin/python2.7 xxx
-# pip freeze > requirements.txt
-```
+    ```sh
+    sudo pip install virtualenv
+    virtualenv -p /usr/bin/python2.7 xxx
+    # pip freeze > requirements.txt
+    ```
 
 ##### pip.conf
 ```sh
@@ -61,8 +70,8 @@ trusted-host=mirrors.aliyun.com
 ```sh
 清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/
 阿里云 http://mirrors.aliyun.com/pypi/simple/
-中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/ 
-豆瓣(douban) https://pypi.douban.com/simple/ 
+中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
+豆瓣(douban) https://pypi.douban.com/simple/
 中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/
 ```
 
@@ -71,16 +80,3 @@ trusted-host=mirrors.aliyun.com
 export LC_ALL=C
 ```
 
-------------
-
-- ## ssh/config
-
-```sh
-Host virtual
-    HostName xxx
-    User xxx
-    IdentitiesOnly yes
-    IdentityFile ~/.ssh/id_rsa
-    ServerAliveInterval 120
-# ssh-copy-id -i ~/.ssh/id_rsa.pub virtual
-```
