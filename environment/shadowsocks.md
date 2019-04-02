@@ -5,8 +5,9 @@ pip install shadowsocks
 # path : /etc/shadowsocks.json
 {
     "server":"0.0.0.0",
-    "server_port":port,
-    "password":"password",
+    "port_password": {
+        "8000": "password"
+    },
     "timeout":300,
     "method":"aes-256-cfb",
     "fast_open":true,
