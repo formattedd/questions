@@ -59,10 +59,10 @@ path : ~/.shadowsocks/shadowsocks.json
   "local_address": "127.0.0.1",
   "local_port":1080,
   "timeout":300,
-  "method":"aes-256-cfb"
+  "method":"aes-256-cfb",
   "fast_open":true,
   "pid-file": "/path",
-  "log-gile": "/path"
+  "log-file": "/path"
 }
 
 sslocal -c ~/.shadowsocks/shadowsocks.json -d start
