@@ -4,10 +4,8 @@
 
 JudgeZshrcExists(){
     if [ ! -d "~/.oh-my-zsh" ]; then
-        mv -f ~/.oh-my-zsh ~/oh-my-zsh-old
-    fi
-    if [ ! -a "~/.zshrc" ]; then
         cp ~/.zshrc ~/.zshrc.orig
+        mv -f ~/.oh-my-zsh ~/oh-my-zsh-old
     fi
 }
 
