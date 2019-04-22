@@ -9,6 +9,10 @@
 
     plgins,
     git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+    or run it,
+    sh -c "$(wget https://raw.githubusercontent.com/formateddd/questions/master/environment/zshrc_install.sh -O -)"
+
     ```
 - ##### [其他zshrc配置](https://github.com/formateddd/questions/blob/master/environment/zshrc)
 
