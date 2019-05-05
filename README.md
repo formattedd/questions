@@ -21,11 +21,11 @@
 
     ```sh
     Host virtual
-    HostName xxx
-    User xxx
-    IdentitiesOnly yes
-    IdentityFile ~/.ssh/id_rsa
-    ServerAliveInterval 120
+        HostName xxx
+        User xxx
+        IdentitiesOnly yes
+        IdentityFile ~/.ssh/id_rsa
+        ServerAliveInterval 120
     # ssh-copy-id -i ~/.ssh/id_rsa.pub virtual
     # ssh -D 1082 -f -C -q -N xx
     ```
