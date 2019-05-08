@@ -1,14 +1,13 @@
 DISABLE_AUTO_UPDATE="true"
 
 alias gs='gst'
-# alias vi='/usr/local/bin/vim'
 alias vi='vim'
 
+alias scpr="rsync -Pzv --rsh=ssh"
 alias getpass='openssl rand -base64 20'
-alias www='python -m http.server 8000'
+alias www='ifconfig && python -m http.server 8000'
 alias getip='curl ipinfo.io/ip'
 
-# pip install pygments
 function ccat() {
     local style="monokai"
     if [ $# -eq 0 ]; then
@@ -22,6 +21,7 @@ function ccat() {
 
 alias dp='docker ps -a'
 alias dk='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias dr='docker rmi $(docker images -f "dangling=true" -q)'
 alias dc='docker-compose'
 alias di='docker images'
 alias dir='docker rmi'
