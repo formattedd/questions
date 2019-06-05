@@ -9,11 +9,11 @@ JudgeZshrcExist(){
 InstallZsh(){
     echo "installing..."
     if which apt-get >/dev/null; then
-        sudo apt-get install -y zsh
+        sudo apt-get install -y zsh git
     elif which brew >/dev/null;then
-        brew install zsh
+        brew install zsh git
     elif which yum >/dev/null;then
-        sudo yum install zsh
+        sudo yum install zsh git
     else
         echo "Does not support system version"
     fi
@@ -22,7 +22,6 @@ InstallZsh(){
 InstallOhMyZsh(){
     git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
     cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-    echo "which zsh"
     chsh -s /bin/zsh
 }
 
@@ -63,7 +62,6 @@ WriteZshrc(){
 
     # python virtualenv 
     # source ~/.virtualenv/py3/bin/activate" >  ~/.zshrc
-    source ~/.zshrc
 }
 
 JudgeZshrcExist
@@ -71,3 +69,5 @@ InstallZsh
 InstallOhMyZsh
 InstallThemesPlugins
 WriteZshrc
+
+echo "finish ! logout and relogin"
