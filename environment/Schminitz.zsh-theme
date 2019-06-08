@@ -24,8 +24,9 @@ function vim_bg_info() {
 }
 
 PROMPT='%(?, ,%{$fg[red]%}FAIL%{$reset_color%})
-%{$fg[green]%} ✔  MacPro %{$fg[green]%}%{$reset_color%} %{$fg[yellow]%}%~%{$reset_color%}$(git_prompt_info)%{$reset_color%}$(git_prompt_ahead)%{$reset_color%}$(vim_bg_info)
+%{$fg[green]%} ✔  MacPro  %{$fg[yellow]%}%~%{$reset_color%}$(git_prompt_info)%{$reset_color%}$(git_prompt_ahead)%{$reset_color%}$(vim_bg_info) %{$fg[green]%}[%D %*]%{$reset_color%}
 %_ $(prompt_char) '
 
 # Time on right
-RPROMPT='%{$fg[green]%}[%D %*]%{$reset_color%}'
+# RPROMPT='%{$fg[green]%}[%D %*]%{$reset_color%}'
+
