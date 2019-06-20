@@ -34,6 +34,8 @@ WriteZshrc(){
     echo "# Path to your oh-my-zsh installation.
     export ZSH=$HOME/.oh-my-zsh
 
+    DISABLE_AUTO_UPDATE="true"
+
     # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
     ZSH_THEME='Schminitz'
 
