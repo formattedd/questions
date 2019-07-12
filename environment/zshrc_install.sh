@@ -41,8 +41,12 @@ WriteZshrc(){
 
     # Add wisely, as too many plugins slow down shell startup.
     plugins=(
-        zsh-autosuggestions 
-        git)
+      zsh-autosuggestions 
+      web-search
+      git
+      brew
+      docker
+      docker-compose)
 
     source \$ZSH/oh-my-zsh.sh
 
