@@ -14,8 +14,6 @@
     sh -c "$(wget https://raw.githubusercontent.com/formateddd/questions/master/environment/zshrc_install.sh -O -)"
 
     ```
-- ##### [其他zshrc配置](https://github.com/formateddd/questions/blob/master/environment/zshrc)
-
 ------------
 - ## ssh/config
 
