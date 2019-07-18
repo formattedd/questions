@@ -31,45 +31,49 @@ InstallThemesPlugins(){
 }
 
 WriteZshrc(){
-    echo "# Path to your oh-my-zsh installation.
-    export ZSH=$HOME/.oh-my-zsh
 
-    DISABLE_AUTO_UPDATE="true"
+echo "if [ -d "~/.virtualenv/py3" ]; then
+    source ~/.virtualenv/py3/bin/activate
+else
+    echo "virtualenv not existed"
+fi
 
-    # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-    ZSH_THEME='Schminitz'
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-    # Add wisely, as too many plugins slow down shell startup.
-    plugins=(
-      zsh-autosuggestions 
-      web-search
-      git
-      brew
-      docker
-      docker-compose)
+DISABLE_AUTO_UPDATE='true'
 
-    source \$ZSH/oh-my-zsh.sh
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME='Schminitz'
 
-    DISABLE_AUTO_UPDATE='true'
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  zsh-autosuggestions 
+  web-search
+  git
+  brew
+  docker
+  docker-compose)
 
-    alias scpr='rsync -Pzv --rsh=ssh'
-    alias getpass='openssl rand -base64 20'
-    alias www='ifconfig && python -m http.server 8000'
-    alias getip='curl ipinfo.io/ip'
-    alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1080"
-    alias unsetproxy="unset ALL_PROXY"
+source \$ZSH/oh-my-zsh.sh
 
-    # alias gs='gst'
+DISABLE_AUTO_UPDATE='true'
 
-    # alias dp='docker ps -a'
-    # alias dk='docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)'
-    # alias dr='docker rmi \$(docker images -f "dangling=true" -q)'
-    # alias dc='docker-compose'
-    # alias di='docker images'
-    # alias dir='docker rmi'
+alias scpr='rsync -Pzv --rsh=ssh'
+alias getpass='openssl rand -base64 20'
+alias www='ifconfig && python -m http.server 8000'
+alias getip='curl ipinfo.io/ip'
+alias setproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
+alias unsetproxy='unset ALL_PROXY'
 
-    # python virtualenv 
-    # source ~/.virtualenv/py3/bin/activate" >  ~/.zshrc
+# alias gs='gst'
+
+# alias dp='docker ps -a'
+# alias dk='docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)'
+# alias dr='docker rmi \$(docker images -f "dangling=true" -q)'
+# alias dc='docker-compose'
+# alias di='docker images'
+# alias dir='docker rmi' " >  ~/.zshrc
 }
 
 JudgeZshrcExist
