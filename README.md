@@ -3,7 +3,9 @@
 * [pip](#pip)
 * [git](#git)
 * [docker](#docker)
+* [gitlab-docker](#gitlab-docker)
 * [shadowsocks](#shadowsocks)
+
 
 
 ## ohmyzsh
@@ -107,6 +109,15 @@ wget -qO- https://get.docker.com/ | sh
   "registry-mirrors": ["https://registry.docker-cn.com"]
 }
 ```
+
+```sh
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/.config/jesseduffield/lazydocker lazyteam/lazydocker
+```
+
+
+## gitlab-docker
+
+##### [gitlab-docker](https://github.com/formateddd/docker-gitlab)
 
 ## shadowsocks
 ##### server
