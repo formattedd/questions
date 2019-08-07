@@ -49,11 +49,11 @@ ZSH_THEME='Schminitz'
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   zsh-autosuggestions 
-  web-search
-  git
-  brew
-  docker
-  docker-compose)
+  # web-search
+  # git
+  # docker
+  # docker-compose
+)
 
 source \$ZSH/oh-my-zsh.sh
 
@@ -66,14 +66,18 @@ alias getip='curl ipinfo.io/ip'
 alias setproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
 
-# alias gs='gst'
+alias gs='git status'
+alias ga='git add'
+alias gcmsg='git commit -m'
+alias gco='git checkout'
+alias gd='git diff'
 
-# alias dp='docker ps -a'
-# alias dk='docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)'
-# alias dr='docker rmi \$(docker images -f "dangling=true" -q)'
-# alias dc='docker-compose'
-# alias di='docker images'
-# alias dir='docker rmi' " >  ~/.zshrc
+alias dp='docker ps -a'
+alias dk='docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)'
+alias dr='docker rmi \$(docker images -f "dangling=true" -q)'
+alias dc='docker-compose'
+alias di='docker images'
+alias dir='docker rmi' " >  ~/.zshrc
 }
 
 JudgeZshrcExist
