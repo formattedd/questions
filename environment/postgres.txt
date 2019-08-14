@@ -1,4 +1,21 @@
-﻿sudo apt-get install postgresql-client
+﻿version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 'password'
+      POSTGRES_USER: 'user'
+      POSTGRES_DB: 'postgres'
+      PGDATA: '/var/lib/postgresql/data'
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+
+sudo apt-get install postgresql-client
 sudo apt-get install postgresql
 # sudo apt-get install pgadmin3
 # pgcli
