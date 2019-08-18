@@ -26,7 +26,7 @@
 
 ## ssh/config
 
-    ```sh
+    ```shell
     Host virtual
         HostName xxx
         User xxx
