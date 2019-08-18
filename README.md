@@ -60,11 +60,11 @@ proxy = socks5://127.0.0.1:1080
 
 ## pip
 
-    ```sh
-    sudo pip install virtualenv
-    virtualenv -p /usr/bin/python3.7 ~/.virtualenv/py3
-    # pip freeze > requirements.txt
-    ```
+```sh
+sudo pip install virtualenv
+virtualenv -p /usr/bin/python3.7 ~/.virtualenv/py3
+# pip freeze > requirements.txt
+```
 
 ##### pip.conf
 ```sh
