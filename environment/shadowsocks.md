@@ -1,6 +1,8 @@
 ## server:
 ```sh
+install libsodium
 pip install shadowsocks
+pip install https://github.com/shadowsocks/shadowsocks/archive/master.zip -U
 
 # path : /etc/shadowsocks.json
 {
@@ -9,9 +11,10 @@ pip install shadowsocks
         "8000": "password"
     },
     "timeout":300,
-    "method":"aes-256-cfb",
+    "method":"chacha20-ietf-poly1305",
     "fast_open":true,
-    "workers": 1
+    "pid-file": "/path/ss.pid",
+    "log-file": "/path/ss.log"
 }
 
 (sudo) ssserver -c /etc/shadowsocks.json -d start
@@ -59,7 +62,7 @@ path : ~/.shadowsocks/shadowsocks.json
   "local_address": "127.0.0.1",
   "local_port":1080,
   "timeout":300,
-  "method":"aes-256-cfb",
+  "method":"chacha20-ietf-poly1305",
   "fast_open":true,
   "pid-file": "/path",
   "log-file": "/path"
