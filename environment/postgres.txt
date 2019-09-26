@@ -2,7 +2,7 @@
 
 services:
   db:
-    image: postgres:latest
+    image: postgres:10-alpine
     restart: always
     ports:
       - 5432:5432
@@ -14,6 +14,14 @@ services:
     volumes:
       - ./postgres:/var/lib/postgresql/data
 
+  admin:
+    image: adminer
+    restart: always
+    depends_on: 
+      - db
+    ports:
+      - 8080:8080
+
 
 sudo apt-get install postgresql-client
 sudo apt-get install postgresql
@@ -22,6 +30,7 @@ sudo apt-get install postgresql
 
 sudo adduser dbuser
 sudo su - postgres
+# sudo -u postgres psql
 psql
 \password postgres
 CREATE USER dbuser WITH PASSWORD 'password';
