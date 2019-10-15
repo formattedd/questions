@@ -44,7 +44,7 @@ Host virtual
 ``` shell
 git config --global user.name ""
 git config --global user.email ""
-ssh-keygen -t rsa -C ""
+ssh-keygen -t rsa -b 4096 -C ""
 ```
 
 ##### git config
