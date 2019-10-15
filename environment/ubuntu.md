@@ -22,6 +22,11 @@ source ~/.zshrc
 > * broadcast 192.168.56.255
 
 
+## ip route
+sudo route add -net 66.1.254.0/24 gw 66.16.62.254 enp4s0
+sudo ip addr flush dev enp4s0
+
+
 ## 安装设置samba
 > * sudo apt-get install samba
 > * sudo useradd xxx
