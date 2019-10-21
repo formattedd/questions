@@ -13,7 +13,7 @@ InstallZsh(){
     elif which brew >/dev/null;then
         brew install zsh git
     elif which yum >/dev/null;then
-        sudo yum install zsh git
+        sudo yum install zsh git -y
     else
         echo "Does not support system version"
     fi
@@ -36,6 +36,10 @@ echo "if [ -d "~/.virtualenv/py3" ]; then
     source ~/.virtualenv/py3/bin/activate
 else
     echo "virtualenv not existed"
+fi
+
+if type nvim > /dev/null 2>&1; then
+    alias vi='nvim'
 fi
 
 # Path to your oh-my-zsh installation.
@@ -62,7 +66,9 @@ DISABLE_AUTO_UPDATE='true'
 alias scpr='rsync -Pzv --rsh=ssh'
 alias getpass='openssl rand -base64 20'
 alias www='ifconfig && python -m http.server 8000'
-alias ip='curl -L tool.lu/ip'
+# alias getip='curl ipinfo.io/ip'
+# alias getip='curl -L tool.lu/ip'
+alias getip='curl http://cip.cc'
 alias setproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY'
 
@@ -71,6 +77,8 @@ alias ga='git add'
 alias gcmsg='git commit -m'
 alias gco='git checkout'
 alias gd='git diff'
+alias gl='git pull'
+alias gp='git push'
 
 alias dp='docker ps -a'
 alias dk='docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)'
