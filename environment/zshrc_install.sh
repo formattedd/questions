@@ -81,8 +81,9 @@ alias gl='git pull'
 alias gp='git push'
 
 alias dp='docker ps -a'
-alias dk='docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)'
-alias dr='docker rmi \$(docker images -f "dangling=true" -q)'
+# alias dk='docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)'
+alias dk='docker rm \$(docker ps -a -q)'
+alias dr='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 alias dc='docker-compose'
 alias di='docker images'
 alias dir='docker rmi' " >  ~/.zshrc
