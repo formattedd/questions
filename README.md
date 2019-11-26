@@ -50,10 +50,15 @@ ssh-keygen -t rsa -b 4096 -C ""
 ##### git config
 ``` shell
 # ~/.gitconfig
-[http]
+[http "https://github.com"]
 proxy = socks5://127.0.0.1:1080
-[https]
+[https "https://github.com"]
 proxy = socks5://127.0.0.1:1080
+
+
+13.229.188.59   github.com 
+75.126.215.88   github.global.ssl.fastly.Net 
+
 ```
 
 
