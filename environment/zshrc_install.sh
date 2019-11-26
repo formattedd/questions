@@ -20,7 +20,9 @@ InstallZsh(){
 }
 
 InstallOhMyZsh(){
-    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+    chsh -s $(which zsh)
 }
 
 InstallThemesPlugins(){
@@ -30,18 +32,17 @@ InstallThemesPlugins(){
 
 WriteZshrc(){
 
-echo "if [ -d "~/.virtualenv/py3" ]; then
-    source ~/.virtualenv/py3/bin/activate
+echo "if [ -d "~/.pyenv/py3" ]; then
+    source ~/.pyenv/py3/bin/activate
 else
-    echo "virtualenv not existed"
+    echo "python virtualenv not existed"
 fi
-
 if type nvim > /dev/null 2>&1; then
     alias vi='nvim'
 fi
 
 # Path to your oh-my-zsh installation.
-# export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 DISABLE_AUTO_UPDATE='true'
 
@@ -56,6 +57,9 @@ plugins=(
   # docker
   # docker-compose
 )
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
+
+DISABLE_AUTO_UPDATE='true'
 
 alias scpr='rsync -Pzv --rsh=ssh'
 alias getpass='openssl rand -base64 20'
@@ -65,7 +69,6 @@ alias www='ifconfig && python -m http.server 8000'
 alias getip='curl http://cip.cc'
 alias setproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY; unset http_proxy; unset https_proxy'
-
 alias gs='git status'
 alias ga='git add'
 alias gcmsg='git commit -m'
@@ -73,14 +76,13 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gl='git pull'
 alias gp='git push'
-
 alias dp='docker ps -a'
 # alias dk='docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)'
-alias dk='docker rm $(docker ps -a -q)'
-alias dr='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
+alias dk='docker rm \$(docker ps -a -q)'
+alias dr='docker rmi \$(docker images --filter "dangling=true" -q --no-trunc)'
 alias dc='docker-compose'
 alias di='docker images'
-alias dir='docker rmi' " >>  ~/.zshrc
+alias dir='docker rmi' " >  ~/.zshrc
 }
 
 JudgeZshrcExist
