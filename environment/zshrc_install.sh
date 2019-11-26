@@ -20,9 +20,7 @@ InstallZsh(){
 }
 
 InstallOhMyZsh(){
-    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-    chsh -s /bin/zsh
+    sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 }
 
 InstallThemesPlugins(){
@@ -43,7 +41,7 @@ if type nvim > /dev/null 2>&1; then
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# export ZSH=$HOME/.oh-my-zsh
 
 DISABLE_AUTO_UPDATE='true'
 
@@ -58,10 +56,6 @@ plugins=(
   # docker
   # docker-compose
 )
-
-source $ZSH/oh-my-zsh.sh
-
-DISABLE_AUTO_UPDATE='true'
 
 alias scpr='rsync -Pzv --rsh=ssh'
 alias getpass='openssl rand -base64 20'
@@ -86,7 +80,7 @@ alias dk='docker rm $(docker ps -a -q)'
 alias dr='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 alias dc='docker-compose'
 alias di='docker images'
-alias dir='docker rmi' " >  ~/.zshrc
+alias dir='docker rmi' " >>  ~/.zshrc
 }
 
 JudgeZshrcExist
