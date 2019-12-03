@@ -52,8 +52,10 @@ ssh-keygen -t rsa -b 4096 -C ""
 # ~/.gitconfig
 [http "https://github.com"]
 proxy = socks5://127.0.0.1:1080
+postBuffer = 524288000
 [https "https://github.com"]
 proxy = socks5://127.0.0.1:1080
+postBuffer = 524288000
 
 
 13.229.188.59   github.com 
