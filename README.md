@@ -195,3 +195,8 @@ lsmod | grep bbr
 #返回值有 tcp_bbr 模块即说明bbr已启动。
 ```
 
+
+## v2ray
+```sh
+bash <(curl -s -L https://raw.githubusercontent.com/233boy/v2ray/master/install.sh )
+```
