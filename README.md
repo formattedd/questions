@@ -11,16 +11,13 @@
 ## ohmyzsh
 
 ```sh
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 themes, 可更改
-wget https://raw.githubusercontent.com/formateddd/questions/master/environment/Schminitz.zsh-theme -P ~/.oh-my-zsh/custom/themes/
+wget https://raw.githubusercontent.com/formateddd/questions/master/environment/Schminitz.zsh-theme -P ~/.oh-my-zsh/ohmyzsh/themes/
 
 plgins,
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-
-or run it,
-sh -c "$(wget https://raw.githubusercontent.com/formateddd/questions/master/environment/zshrc_install.sh -O -)"
 
 ```
 
