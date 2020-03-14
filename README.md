@@ -1,27 +1,30 @@
 
-* [ohmyzsh](#ohmyzsh)
-* [pip](#pip)
-* [git](#git)
-* [docker](#docker)
-* [gitlab-docker](https://github.com/formateddd/docker-gitlab)
-* [shadowsocks](#shadowsocks)
-
-
-
-## ohmyzsh
+<details>
+  <summary>
+    ohmyzsh
+  </summary>
 
 ```sh
+# 分步安装
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-themes, 可更改
+themes:
 wget https://raw.githubusercontent.com/formateddd/questions/master/environment/Schminitz.zsh-theme -P ~/.oh-my-zsh/ohmyzsh/themes/
 
-plgins,
+plgins:
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
-```
 
-## ssh/config
+# 一键安装
+bash <(curl -s https://raw.githubusercontent.com/formateddd/questions/master/environment/zshrc_install.sh)
+
+```
+</details>
+
+<details>
+  <summary>
+    ssh/config
+  </summary>
 
 ```sh
 Host virtual
@@ -33,9 +36,12 @@ Host virtual
 # ssh-copy-id -i ~/.ssh/id_rsa.pub virtual
 # ssh -D 1082 -f -C -q -N xx
 ```
+</details>
 
-------------
-## git
+<details>
+  <summary>
+    git
+  </summary>
 
 ##### public key
 ``` shell
@@ -59,10 +65,13 @@ postBuffer = 524288000
 75.126.215.88   github.global.ssl.fastly.Net 
 
 ```
+</details>
 
 
-
-## pip
+<details>
+  <summary>
+    pip
+  </summary>
 
 ```sh
 sudo pip install virtualenv
@@ -99,8 +108,12 @@ trusted-host=mirrors.aliyun.com
 ```sh
 export LC_ALL=C
 ```
+</details>
 
-## docker
+<details>
+  <summary>
+    docker
+  </summary>
 #### install
 ```sh
 wget -qO- https://get.docker.com/ | sh
@@ -117,9 +130,14 @@ wget -qO- https://get.docker.com/ | sh
 ```sh
 docker run -it -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/.config/jesseduffield/lazydocker lazyteam/lazydocker
 ```
+</details>
 
 
-## shadowsocks
+<details>
+  <summary>
+    shadowsocks
+  </summary>
+
 ##### server
 ```sh
 pip install shadowsocks
@@ -191,9 +209,16 @@ sysctl net.core.default_qdisc
 lsmod | grep bbr
 #返回值有 tcp_bbr 模块即说明bbr已启动。
 ```
+</details>
 
 
-## v2ray
+<details>
+  <summary>
+    v2ray
+  </summary>
+  
 ```sh
 bash <(curl -s -L https://raw.githubusercontent.com/233boy/v2ray/master/install.sh )
 ```
+
+</details>
