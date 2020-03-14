@@ -9,7 +9,7 @@ JudgeZshrcExist(){
 InstallZsh(){
     echo "installing..."
     if which apt-get >/dev/null; then
-        sudo apt-get install -y zsh git
+	sudo apt-get update -y && sudo apt-get install -y zsh git
     elif which brew >/dev/null;then
         brew install zsh git
     elif which yum >/dev/null;then
