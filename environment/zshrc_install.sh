@@ -85,4 +85,5 @@ InstallOhMyZsh
 InstallThemesPlugins
 WriteZshrc
 
+echo "edit ~/.oh-my-zsh/themes/Schminitz.zsh-themes to update themes"
 echo "finish ! logout and relogin"
