@@ -26,8 +26,8 @@ InstallOhMyZsh(){
 }
 
 InstallThemesPlugins(){
-    wget https://raw.githubusercontent.com/formateddd/questions/master/environment/Schminitz.zsh-theme -P ~/.oh-my-zsh/custom/themes/
-    git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    wget https://raw.githubusercontent.com/formateddd/questions/master/environment/Schminitz.zsh-theme -P ~/.oh-my-zsh/themes/
+    git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
 }
 
 WriteZshrc(){
@@ -40,15 +40,11 @@ fi
 if type nvim > /dev/null 2>&1; then
     alias vi='nvim'
 fi
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
 DISABLE_AUTO_UPDATE='true'
-
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME='Schminitz'
-
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   zsh-autosuggestions 
@@ -58,9 +54,7 @@ plugins=(
   # docker-compose
 )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
-
 DISABLE_AUTO_UPDATE='true'
-
 alias scpr='rsync -Pzv --rsh=ssh'
 alias getpass='openssl rand -base64 20'
 alias www='ifconfig && python -m http.server 8000'
