@@ -37,9 +37,11 @@ echo "if [ -d "~/.pyenv/py3" ]; then
 else
     echo "python virtualenv not existed"
 fi
+
 if type nvim > /dev/null 2>&1; then
     alias vi='nvim'
 fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE='true'
@@ -54,15 +56,25 @@ plugins=(
   # docker-compose
 )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
-DISABLE_AUTO_UPDATE='true'
+
+# export FLASK_APP=app.py
+# export FLASK_ENV=development
+alias yd='yarn install && yarn dev'
+# export GOPROXY=https://goproxy.io
+# export GOPATH="$HOME/projects/go"
+# export PATH="$GOPATH/bin:$PATH"
+
 alias scpr='rsync -Pzv --rsh=ssh'
 alias getpass='openssl rand -base64 20'
 alias www='ifconfig && python -m http.server 8000'
 # alias getip='curl ipinfo.io/ip'
 # alias getip='curl -L tool.lu/ip'
 alias getip='curl http://cip.cc'
+alias wt='curl wttr.in/nanjing'
 alias setproxy='export ALL_PROXY=socks5://127.0.0.1:1080'
 alias unsetproxy='unset ALL_PROXY; unset http_proxy; unset https_proxy'
+
+alias gc='git clone'
 alias gs='git status'
 alias ga='git add'
 alias gcmsg='git commit -m'
@@ -70,13 +82,20 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gl='git pull'
 alias gp='git push'
+
 alias dp='docker ps -a'
 # alias dk='docker stop \$(docker ps -a -q) && docker rm \$(docker ps -a -q)'
 alias dk='docker rm \$(docker ps -a -q)'
 alias dr='docker rmi \$(docker images --filter "dangling=true" -q --no-trunc)'
 alias dc='docker-compose'
 alias di='docker images'
-alias dir='docker rmi' " >  ~/.zshrc
+alias dir='docker rmi'
+
+# git -C \"\$(brew --repo)\" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
+# git -C \"\$(brew --repo homebrew/core)\" remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
+" >  ~/.zshrc
 }
 
 JudgeZshrcExist
