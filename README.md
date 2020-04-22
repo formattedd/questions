@@ -124,7 +124,7 @@ wget -qO- https://get.docker.com/ | sh
 
 ```sh
 {
-  "registry-mirrors": ["https://registry.docker-cn.com"]
+  "registry-mirrors": ["http://hub-mirror.c.163.com"]
 }
 ```
 
