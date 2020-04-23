@@ -16,7 +16,7 @@ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh
 
 
 # 一键安装
-bash <(curl -s https://raw.githubusercontent.com/formateddd/questions/master/environment/zshrc_install.sh)
+sh <(curl -fsSL https://raw.githubusercontent.com/formateddd/questions/master/environment/zshrc_install.sh)
 
 ```
 </details>
@@ -219,7 +219,7 @@ lsmod | grep bbr
   </summary>
   
 ```sh
-bash <(curl -s -L https://raw.githubusercontent.com/233boy/v2ray/master/install.sh )
+sh <(curl -fsSL -L https://raw.githubusercontent.com/233boy/v2ray/master/install.sh )
 ```
 
 </details>
