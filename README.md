@@ -118,6 +118,8 @@ export LC_ALL=C
 #### install
 ```sh
 wget -qO- https://get.docker.com/ | sh
+
+sudo usermod -aG docker $USER
 ```
 
 #### config path: /etc/docker/daemon.json
