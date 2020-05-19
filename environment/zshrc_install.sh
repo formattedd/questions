@@ -42,6 +42,11 @@ if type nvim > /dev/null 2>&1; then
     alias vi='nvim'
 fi
 
+move_to_trash () {
+    mv "$@" ~/.trash
+}
+alias rm='move_to_trash'
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 DISABLE_AUTO_UPDATE='true'
