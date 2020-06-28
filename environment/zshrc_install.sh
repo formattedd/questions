@@ -41,11 +41,9 @@ fi
 if type nvim > /dev/null 2>&1; then
     alias vi='nvim'
 fi
+# alias vi='mvim -v'
 
-move_to_trash () {
-    mv "$@" ~/.trash
-}
-alias rm='move_to_trash'
+bindkey '^n' end-of-line
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -55,16 +53,11 @@ ZSH_THEME='Schminitz'
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   zsh-autosuggestions 
-  # web-search
-  # git
-  # docker
-  # docker-compose
 )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # export FLASK_APP=app.py
 # export FLASK_ENV=development
-alias yd='yarn install && yarn dev'
 # export GOPROXY=https://goproxy.io
 # export GOPATH="$HOME/projects/go"
 # export PATH="$GOPATH/bin:$PATH"
