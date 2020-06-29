@@ -56,6 +56,8 @@ plugins=(
 )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
+# pip install better_exceptions
+# export BETTER_EXCEPTIONS=1
 # export FLASK_APP=app.py
 # export FLASK_ENV=development
 # export GOPROXY=https://goproxy.io
