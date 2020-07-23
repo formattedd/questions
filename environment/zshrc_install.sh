@@ -56,6 +56,8 @@ plugins=(
 )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
+export LC_ALL="zh_CN.UTF-8"
+
 # pip install better_exceptions
 # export BETTER_EXCEPTIONS=1
 # export FLASK_APP=app.py
@@ -65,7 +67,8 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 # export PATH="$GOPATH/bin:$PATH"
 
 alias scpr='rsync -Pzv --rsh=ssh'
-alias getpass='openssl rand -base64 20'
+# alias getpass='openssl rand -base64 20'
+alias getpass='openssl rand -hex 32'
 alias www='ifconfig && python -m http.server 8000'
 # alias getip='curl ipinfo.io/ip'
 # alias getip='curl -L tool.lu/ip'
