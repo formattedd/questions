@@ -87,21 +87,23 @@ pip install web.py -i http://pypi.douban.com/simple --trusted-host pypi.douban.c
 
 ##### 修改配置文件：
 ```sh
+# 清华源
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+# 阿里源
+pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+# 腾讯源
+pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple
+# 豆瓣源
+pip config set global.index-url http://pypi.douban.com/simple/
+
+or
+
 # linux:`~/.pip/pip.conf`
 # windows:`%HOMEPATH%\pip\pip.ini）`
 [global]
 index-url = http://mirrors.aliyun.com/pypi/simple/
 [install]
 trusted-host=mirrors.aliyun.com
-```
-
-##### 其他源：
-```sh
-清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/
-阿里云 http://mirrors.aliyun.com/pypi/simple/
-中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/
-豆瓣(douban) https://pypi.douban.com/simple/
-中国科学技术大学 http://pypi.mirrors.ustc.edu.cn/simple/
 ```
 
 ##### error: locale.Error: unsupported locale setting
