@@ -28,6 +28,7 @@ InstallOhMyZsh(){
 InstallThemesPlugins(){
     wget https://raw.githubusercontent.com/formateddd/questions/master/environment/Schminitz.zsh-theme -P ~/.oh-my-zsh/themes/
     git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting
 }
 
 WriteZshrc(){
@@ -53,6 +54,7 @@ ZSH_THEME='Schminitz'
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   zsh-autosuggestions 
+  zsh-syntax-highlighting
 )
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
