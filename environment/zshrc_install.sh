@@ -35,7 +35,7 @@ InstallThemesPlugins(){
 }
 
 WriteZshrc(){
-    wget https://raw.githubusercontent.com/formateddd/questions/master/environment/zshrc -P ~/.zshrc
+    wget https://raw.githubusercontent.com/formateddd/questions/master/environment/zshrc ~/.zshrc
 }
 
 JudgeZshrcExist
