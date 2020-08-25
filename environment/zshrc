@@ -40,8 +40,8 @@ export FLASK_ENV=development
 alias yy='yarn'
 alias yd='yarn install && yarn dev'
 
-alias rm='trash-put'
-alias scpr='rsync -Pzv --rsh=ssh'
+# alias rm='trash-put'
+# alias scpr='rsync -Pzv --rsh=ssh'
 # alias getpass='openssl rand -base64 20'
 alias getpass='openssl rand -hex 20'
 alias www='ifconfig en0 && python -m http.server 80'
