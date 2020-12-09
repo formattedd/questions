@@ -22,6 +22,7 @@ services:
     ports:
       - 8080:8080
 
+docker run -d -e SESSIONS=true -p 8081:8081 sosedoff/pgweb
 
 sudo apt-get install postgresql-client
 sudo apt-get install postgresql
