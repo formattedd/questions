@@ -1,4 +1,6 @@
 # pip install psycopg2-binary
+# sqlacodegen postgres://user:passwd@host:ip/database --outfile model.py
+
 from sqlalchemy import create_engine
 from sqlalchemy import Column, String
 from sqlalchemy.ext.declarative import declarative_base
