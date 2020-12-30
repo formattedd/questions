@@ -1,0 +1,11 @@
+[program:frp_ssh]
+
+command     = ~/dev/frp_0.33.0_linux_amd64/frpc -c ~/dev/frp_0.33.0_linux_amd64/viewer.pub.ini 
+autostart = true
+autorestart = true
+startsecs   = 3
+
+redirect_stderr         = true
+stdout_logfile_maxbytes = 50MB
+stdout_logfile_backups  = 10
+stdout_logfile          = ~/dev/frp_0.33.0_linux_amd64/log
