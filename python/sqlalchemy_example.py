@@ -42,3 +42,7 @@ session.commit()
 # Delete
 session.delete(doctor_strange)
 session.commit()
+
+delete_obj = Shop.__table__.delete().where(Shop.shop_cate.contains("m"))
+session.execute(delete_obj)
+session.commit()
