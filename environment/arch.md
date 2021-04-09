@@ -42,3 +42,24 @@ chmod +x vps2arch
 # ./vps2arch -m https://mirrors.neusoft.edu.cn/archlinux/
 
 sync ; reboot -f
+
+# 使用 ntp
+timedatectl set-ntp true
+# 设置时区
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+hwclock --systohc
+
+编辑 /etc/locale.gen 取消一下行的注释（你可能需要一个编辑器，如 vim，请自行安装）
+
+en_GB.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8
+
+执行 locale-gen
+
+创建 /etc/locale.conf 并编辑 LANG 这一 变量，比如：
+
+LANG=zh_CN.UTF-8
+
+/etc/pacman.conf
+[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
