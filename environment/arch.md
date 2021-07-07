@@ -44,6 +44,7 @@ chmod +x vps2arch
 sync ; reboot -f
 
 # 使用 ntp
+pacman -S ntp
 timedatectl set-ntp true
 # 设置时区
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
