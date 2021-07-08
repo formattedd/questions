@@ -64,3 +64,19 @@ LANG=zh_CN.UTF-8
 /etc/pacman.conf
 [archlinuxcn]
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+
+
+# 输入法
+``` sh
+sudo pacman -Rs $(pacman -Qsq fcitx)
+
+sudo pacman -S fcitx5 fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-chinese-addons
+
+vi ~/.xprofile
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+fcitx5 &
+
+``` 
